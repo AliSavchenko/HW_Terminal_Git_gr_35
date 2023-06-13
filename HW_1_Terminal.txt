@@ -60,19 +60,34 @@ q --- Exit less.
 
 Задание *
 1) Отправить http запрос на сервер.
-http://162.55.220.72:5005/terminal-hw-request
+http://162.55.220.72:5006/terminal-hw-request
 ----
 
-curl http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5006/terminal-hw-request
 
 результат:
- % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   232  100   232    0     0   3370      0 --:--:-- --:--:-- --:--:--  3411<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<title>404 Not Found</title>
-<h1>Not Found</h1>
-<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+100   283  100   283    0     0   3907      0 --:--:-- --:--:-- --:--:--  3930{
+  "Intro": "Hello!! This is your the first response from server",
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
 
+curl "http://162.55.220.72:5005/get_method?name=Alina&age=34"
+
+ответ:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    23  100    23    0     0    392      0 --:--:-- --:--:-- --:--:--   396[
+  "Alina",
+  "34"
+]
 
 -----
 
@@ -82,7 +97,6 @@ curl http://162.55.220.72:5005/terminal-hw-request
 1. Создать файл с расширением myscript.sh ---> touch myscript.sh
 2. Открыть его для редактирования ---> nano myscript.sh / vim myscript.sh
 3. Записать туда команды из пунктов 3, 4, 5, 6, 7, 8, 13
-
 cd name_1
 mkdir script_1 script_2 script_3
 cd script_1
