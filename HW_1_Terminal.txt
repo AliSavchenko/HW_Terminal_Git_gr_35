@@ -1,0 +1,95 @@
+HW_1. The first part
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я --- pwd
+2) Создать папку --- mkdir HW_Git_Alina_Savchenko
+3) Зайти в папку --- cd HW_Git_Alina_Savchenko
+4) Создать 3 папки --- mkdir name_1 name_2 name_3 будут созданы папки параллельно
+5) Зайти в любую папку --- cd name_1; 
+6) Создать 5 файлов (3 txt, 2 json) --- touch file1.txt file2.txt file3.txt file1.json file2.json
+7) Создать 3 папки --- mkdir -p dir_1/dir_2/dir_3 будут созданы папки одна в другой
+8) Вывести список содержимого папки --- ls -la
+9) + Открыть любой txt файл --- cat > file1.txt
+10) + написать туда что-нибудь, любой текст. ----- Hello, my mentor!!!
+11) + сохранить и выйти. ---- ctrl+c
+12) Выйти из папки на уровень выше --- cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. ---- mv name_1/file1.json name_1/file1.txt name_2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. ---- cp name_1/file2.json name_1/file2.txt name_2 
+15) Найти файл по имени ---- find -name 'file2.txt'
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. ---- 
+
+grep [опции] значение [путь к файлу]
+grep — команда
+[опции] — модификаторы команды
+значение — поисковый запрос
+[путь к файлу] — файл или каталог, в котором вы выполняете поиск
+
+tail -f file3.txt | grep [search_item]
+
+17) вывести несколько первых строк из текстового файла  --- head filename.txt; head -n* filename.txt. 
+	Параметр -n регулирует количество выводимых строк
+	* - нужно указать число строк
+18) вывести несколько последних строк из текстового файла --- tail filename.txt; tail -n* filename.txt; tail -f filename.txt 
+	Параметр -f отслеживание логов в реальном времени (покажет изменения, выведет строки по мере их добавления в конец).
+	* - нужно указать число строк
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. 
+---- 
+Выводит содержимое файла для просмотра в рамках текущего окна.
+
+less [option] filename.txt
+  
+Down arrow, Enter, e, or j -- Move forward one line.
+Up arrow,y or k	-- Move backward one line.
+Space bar or f -- Move Forward one page.
+b -- Move Backward one page.
+/pattern -- Search forward for matching patterns.
+?pattern -- Search backward for matching patterns.
+n --- Repeat previous search.
+N --- Repeat previous search in reverse direction.
+g --- Go to the first line in the file.
+Ng --- Go to the N-th line in the file.
+G --- Go to the last line in the file.
+p --- Go to the beginning of fthe ile.
+Np --- Go to N percent into file.
+h --- Display help.
+q --- Exit less.
+
+
+20) вывести дату и время ---> date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+----
+
+curl http://162.55.220.72:5005/terminal-hw-request
+
+результат:
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   232  100   232    0     0   3370      0 --:--:-- --:--:-- --:--:--  3411<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+-----
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+---
+1. Создать файл с расширением myscript.sh ---> touch myscript.sh
+2. Открыть его для редактирования ---> nano myscript.sh / vim myscript.sh
+3. Записать туда команды из пунктов 3, 4, 5, 6, 7, 8, 13
+
+cd name_1
+mkdir script_1 script_2 script_3
+cd script_1
+touch file1.txt file2.txt file3.txt file1.json file2.json
+mkdir new_1 new_2 new_3
+ls -la
+mv file1.txt file2.txt new_1
+4. Сохранить файл ctrl+O
+5. Выйти из nano ctrl+X / :wq - записать файл и выйти из vim;
+6. Запустить скрипт из GitBash sh myscript.sh
